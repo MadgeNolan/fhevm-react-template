@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy-Preserving Research Data Sharing</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🔐 Research Data Sharing Platform</h1>
+            <p class="subtitle">Privacy-Preserving Scientific Data Collaboration with FHEVM</p>
+            <div id="networkInfo" class="network-info"></div>
+        </header>
+
+        <div id="walletSection" class="connect-section">
+            <button id="connectBtn" class="btn btn-connect">Connect Wallet</button>
+            <p class="info">Connect MetaMask to start using the platform</p>
+        </div>
+
+        <div id="mainContent" class="main-content" style="display: none;">
+            <div class="stats">
+                <div class="stat-item">
+                    <span id="totalDatasets" class="stat-number">0</span>
+                    <span class="stat-label">Total Datasets</span>
+                </div>
+                <div class="stat-item">
+                    <span id="totalRequests" class="stat-number">0</span>
+                    <span class="stat-label">Data Requests</span>
+                </div>
+            </div>
+
+            <section class="section">
+                <h2>📊 Contribute Encrypted Dataset</h2>
+                <div class="form-group">
+                    <label>Data Value (will be encrypted):</label>
+                    <input type="number" id="dataValue" placeholder="e.g., 12345" class="input">
+                </div>
+                <div class="form-group">
+                    <label>Quality Score (0-100):</label>
+                    <input type="number" id="qualityScore" min="0" max="100" placeholder="e.g., 85" class="input">
+                </div>
+                <div class="form-group">
+                    <label>Metadata Hash (IPFS):</label>
+                    <input type="text" id="metadataHash" placeholder="e.g., QmHash..." class="input">
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="isPublic">
+                        Make dataset publicly accessible
+                    </label>
+                </div>
+                <button id="contributeBtn" class="btn btn-primary">Contribute Dataset</button>
+            </section>
+
+            <section class="section">
+                <h2>🔍 Request Data Access</h2>
+                <div class="form-group">
+                    <label>Research Topic:</label>
+                    <input type="text" id="researchTopic" placeholder="e.g., Cancer Research Study" class="input">
+                </div>
+                <div class="form-group">
+                    <label>Budget (encrypted):</label>
+                    <input type="number" id="budget" placeholder="e.g., 50000" class="input">
+                </div>
+                <div class="form-group">
+                    <label>Deadline (days from now):</label>
+                    <input type="number" id="deadlineDays" placeholder="e.g., 30" class="input">
+                </div>
+                <button id="requestBtn" class="btn btn-secondary">Submit Request</button>
+            </section>
+
+            <section class="section">
+                <h2>📚 Access Dataset</h2>
+                <div class="form-group">
+                    <label>Dataset ID:</label>
+                    <input type="number" id="datasetId" placeholder="e.g., 1" class="input">
+                </div>
+                <button id="accessBtn" class="btn btn-primary">Access Dataset</button>
+                <div id="datasetResult" class="result"></div>
+            </section>
+        </div>
+
+        <footer class="features">
+            <h2>✨ Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>🔒 Fully Encrypted</h3>
+                    <p>Research data stays encrypted using euint32, euint8, euint64</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🧮 Homomorphic Operations</h3>
+                    <p>Compute on encrypted data without decryption</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🤝 Access Control</h3>
+                    <p>Grant permissions without revealing dataset contents</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🚀 FHEVM SDK</h3>
+                    <p>Built with universal @fhevm/sdk for easy integration</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+</body>
+</html>
