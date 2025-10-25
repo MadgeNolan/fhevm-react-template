@@ -4,6 +4,8 @@
 
 A comprehensive, framework-agnostic SDK for building privacy-preserving applications with Zama's FHEVM (Fully Homomorphic Encryption Virtual Machine). This SDK provides wagmi-like structure for web3 developers, making it intuitive to build confidential frontends.
 
+🌐 **[Live Demo](https://fhe-research-data-sharing.vercel.app/)** | 📺 **[Video Demo demo.mp4]** | 📜 **[Contract on Sepolia](https://sepolia.etherscan.io/address/0x13782134cE8cA22C432bb636B401884806799AD2)**
+
 ## 🚀 Quick Start (< 10 Lines)
 
 ```typescript
