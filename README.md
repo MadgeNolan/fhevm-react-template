@@ -69,14 +69,38 @@ fhevm-sdk-monorepo/
 ├── examples/
 │   ├── nextjs/                 # Next.js example (REQUIRED)
 │   │   ├── app/
-│   │   ├── package.json
-│   │   └── README.md
+│   │   │   ├── page.tsx        # Main demo page
+│   │   │   ├── layout.tsx      # Root layout
+│   │   │   ├── globals.css     # Styles
+│   │   │   └── api/            # API routes
+│   │   │       ├── fhe/        # FHE operations
+│   │   │       │   ├── route.ts
+│   │   │       │   ├── encrypt/route.ts
+│   │   │       │   ├── decrypt/route.ts
+│   │   │       │   └── compute/route.ts
+│   │   │       └── keys/route.ts
+│   │   ├── components/
+│   │   │   ├── ui/             # UI components
+│   │   │   ├── fhe/            # FHE components
+│   │   │   └── examples/       # Use case examples
+│   │   ├── lib/                # Utilities
+│   │   ├── hooks/              # Custom hooks
+│   │   ├── types/              # Type definitions
+│   │   └── package.json
 │   │
-│   └── research-data-sharing/  # Full dApp example
+│   └── research-data-sharing/  # Full platform example
 │       ├── contracts/          # Smart contracts
 │       ├── index.html          # Frontend
 │       ├── main.js             # SDK integration
 │       └── README.md
+│
+├── templates/                  # Template projects
+│   └── nextjs/                 # Next.js template (copy of example)
+│
+├── docs/                       # Documentation
+│   ├── API.md                  # API reference
+│   ├── QUICKSTART.md           # Quick start guide
+│   └── EXAMPLES.md             # Usage examples
 │
 ├── demo.mp4                    # Video demonstration
 ├── package.json                # Root package
@@ -139,13 +163,29 @@ function MyComponent() {
 
 ### Next.js
 
-See complete working example in `examples/nextjs/`.
+See complete working example in `examples/nextjs/` with:
+- Full App Router implementation
+- API routes for server-side FHE
+- Reusable UI components
+- Custom hooks for encryption
+- Real-world examples (Banking, Medical)
+- Complete TypeScript support
 
 ```bash
 cd examples/nextjs
 npm install
 npm run dev
+# Open http://localhost:3000
 ```
+
+Features demonstrated:
+- Wallet connection with MetaMask
+- Value encryption with multiple types
+- Homomorphic computations
+- Server-side encryption/decryption
+- Key management
+- Private banking transactions
+- Medical record encryption
 
 ## 📖 Documentation
 
@@ -188,6 +228,14 @@ interface EncryptionParams {
 }
 ```
 
+### Detailed Documentation
+
+- **[API Reference](./docs/API.md)** - Complete API documentation
+- **[Quick Start Guide](./docs/QUICKSTART.md)** - Get started in 5 minutes
+- **[Examples](./docs/EXAMPLES.md)** - Real-world usage examples
+- **[Architecture](./ARCHITECTURE.md)** - SDK design and structure
+- **[Deployment Guide](./DEPLOYMENT.md)** - Deploy your applications
+
 ## 🎬 Video Demo
 
 Watch `demo.mp4` for a complete walkthrough of:
@@ -218,15 +266,18 @@ npm run dev
 
 Full privacy-preserving research platform showing:
 - Encrypted data contribution
-- Access control
-- Quality scoring
-- Reward distribution
+- Access control with smart contracts
+- Quality scoring on encrypted data
+- Transparent reward distribution
+- Real-world deployment on Sepolia
 
 ```bash
 cd examples/research-data-sharing
 npm install
 npm run dev
 ```
+
+**Live Demo:** [https://fhe-research-data-sharing.vercel.app/](https://fhe-research-data-sharing.vercel.app/)
 
 ## 🔧 Development
 
